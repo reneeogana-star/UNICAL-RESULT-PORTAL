@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University of Calabar Result Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="portal-card">
+
+        <header class="portal-header">
+            <div class="logo">
+                <!-- Replace this with the official university logo -->
+                <img src="unical-logo.png"
+                     alt="University of Calabar Logo"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+                <div class="logo-placeholder">UNICAL</div>
+            </div>
+
+            <h1>UNIVERSITY OF CALABAR</h1>
+            <p class="subtitle">RESULT PORTAL</p>
+        </header>
+
+        <section class="login-section">
+            <form id="loginForm">
+
+                <div class="form-group">
+                    <label for="matric">MATRICULATION NUMBER</label>
+                    <div class="input-box">
+                        <span class="input-icon">▣</span>
+                        <input type="text" id="matric"
+                            placeholder="e.g. CC/20/0001" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="jamb">JAMB REGISTRATION NUMBER</label>
+                    <div class="input-box">
+                        <span class="input-icon hash">#</span>
+                        <input type="text" id="jamb"
+                            placeholder="e.g. 12345678AB" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="pin">DATE OF PIN</label>
+                    <div class="input-box">
+                        <span class="input-icon">▦</span>
+                        <input type="text" id="pin"
+                            placeholder="Enter your pin" required>
+                    </div>
+                </div>
+
+                <div class="student-options">
+                    <button type="button" class="student-btn"
+                        data-type="new">
+                        <span>♟</span> NEW STUDENT
+                    </button>
+
+                    <button type="button" class="student-btn"
+                        data-type="returning">
+                        <span>⟳</span> RETURNING
+                    </button>
+                </div>
+
+                <button type="submit" class="login-btn">
+                    <span>⇥</span> LOGIN
+                </button>
+
+                <div class="bottom-links">
+                    <a href="#" id="getPin">⚒ Don't have a pin? Get one here</a>
+                    <a href="#" id="changePin">⟳ Change Pin</a>
+                </div>
+
+                <p id="message" class="message" aria-live="polite"></p>
+
+            </form>
+        </section>
+    </main>
+
+    <script>
+        const message = document.getElementById("message");
+
+        document.querySelectorAll(".student-btn").forEach(button => {
+            button.addEventListener("click", () => {
+                document.querySelectorAll(".student-btn")
+                    .forEach(btn => btn.classList.remove("active"));
+
+                button.classList.add("active");
+
+                message.textContent =
+                    button.dataset.type === "new"
+                    ? "New student selected."
+                    : "Returning student selected.";
+            });
+        });
+
+        document.getElementById("loginForm").addEventListener("submit", e => {
+            e.preventDefault();
+            message.textContent =
+                "Demo only: connect an authorized portal backend to log in.";
+        });
+
+        document.getElementById("getPin").addEventListener("click", e => {
+            e.preventDefault();
+            message.textContent =
+                "Connect this link to the official PIN purchase page.";
+        });
+
+        document.getElementById("changePin").addEventListener("click", e => {
+            e.preventDefault();
+            message.textContent =
+                "Connect this link to the official PIN change page.";
+        });
+    </script>
+
+</body>
+</html>
