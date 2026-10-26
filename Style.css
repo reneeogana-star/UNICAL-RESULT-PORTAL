@@ -1,0 +1,339 @@
+
+/* GENERAL STYLING */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 35px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+
+    background:
+        radial-gradient(ellipse at 100% 0%,
+            #087ca5 0%, transparent 40%),
+        linear-gradient(120deg,
+            #281078 0%,
+            #101d66 45%,
+            #075b91 100%);
+}
+
+/* MAIN PORTAL CARD */
+.portal-card {
+    width: 100%;
+    max-width: 755px;
+    overflow: hidden;
+    border: 1px solid rgba(145, 160, 255, 0.35);
+    border-radius: 35px;
+
+    background: rgba(35, 63, 155, 0.40);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(15px);
+}
+
+/* HEADER */
+.portal-header {
+    padding: 35px 20px 37px;
+    text-align: center;
+    background: linear-gradient(
+        115deg,
+        rgba(42, 25, 130, 0.55),
+        rgba(0, 207, 225, 0.48)
+    );
+    border-bottom: 1px solid rgba(160, 185, 255, 0.45);
+}
+
+.logo {
+    position: relative;
+    width: 145px;
+    height: 145px;
+    margin: 0 auto 18px;
+    border: 4px solid #d7e8ff;
+    border-radius: 50%;
+    background: #142c83;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.logo-placeholder {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-weight: bold;
+    font-size: 21px;
+}
+
+.portal-header h1 {
+    font-size: clamp(20px, 3.5vw, 39px);
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    margin-top: 19px;
+    font-size: 26px;
+    letter-spacing: 6px;
+    font-weight: 400;
+}
+
+/* FORM SECTION */
+.login-section {
+    padding: 45px 9% 35px;
+}
+
+.form-group {
+    margin-bottom: 42px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 16px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.input-box {
+    height: 86px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 0 23px;
+
+    border: 2px solid rgba(183, 200, 255, 0.65);
+    border-radius: 20px;
+    background: rgba(100, 133, 219, 0.20);
+
+    transition: border-color 0.3s, background 0.3s;
+}
+
+.input-box:focus-within {
+    border-color: #13e3f0;
+    background: rgba(100, 133, 219, 0.30);
+}
+
+.input-icon {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.input-icon.hash {
+    font-size: 40px;
+}
+
+.input-box input {
+    width: 100%;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 22px;
+}
+
+.input-box input::placeholder {
+    color: rgba(230, 239, 255, 0.78);
+}
+
+/* STUDENT TYPE BUTTONS */
+.student-options {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 34px;
+}
+
+.student-btn {
+    flex: 1;
+    min-height: 75px;
+    padding: 12px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+
+    border: 2px solid rgba(183, 200, 255, 0.55);
+    border-radius: 19px;
+    background: rgba(100, 133, 219, 0.22);
+    color: white;
+
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.student-btn span {
+    font-size: 27px;
+}
+
+.student-btn:hover,
+.student-btn.active {
+    background: rgba(0, 213, 229, 0.25);
+    border-color: #14e0ef;
+}
+
+/* LOGIN BUTTON */
+.login-btn {
+    width: 100%;
+    min-height: 85px;
+    border: none;
+    border-radius: 19px;
+
+    background: linear-gradient(
+        100deg,
+        #a90cf5,
+        #5464ff,
+        #00d8d8
+    );
+
+    color: white;
+    font-size: 29px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    cursor: pointer;
+    transition: transform 0.2s, filter 0.2s;
+}
+
+.login-btn span {
+    margin-right: 12px;
+}
+
+.login-btn:hover {
+    filter: brightness(1.12);
+    transform: translateY(-2px);
+}
+
+/* BOTTOM LINKS */
+.bottom-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: 38px;
+}
+
+.bottom-links a {
+    color: #20e2f2;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.bottom-links a:last-child {
+    color: #d6e5ff;
+}
+
+.bottom-links a:hover {
+    text-decoration: underline;
+}
+
+.message {
+    margin-top: 18px;
+    font-size: 14px;
+    color: #aefaff;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 600px) {
+    body {
+        padding: 18px 10px;
+    }
+
+    .portal-card {
+        border-radius: 24px;
+    }
+
+    .portal-header {
+        padding: 28px 12px;
+    }
+
+    .logo {
+        width: 110px;
+        height: 110px;
+    }
+
+    .portal-header h1 {
+        font-size: 21px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+        letter-spacing: 4px;
+    }
+
+    .login-section {
+        padding: 30px 6% 28px;
+    }
+
+    .form-group {
+        margin-bottom: 28px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+
+    .input-box {
+        height: 62px;
+        gap: 15px;
+        padding: 0 14px;
+        border-radius: 14px;
+    }
+
+    .input-box input {
+        font-size: 16px;
+    }
+
+    .input-icon {
+        font-size: 24px;
+    }
+
+    .student-options {
+        gap: 10px;
+    }
+
+    .student-btn {
+        min-height: 60px;
+        gap: 6px;
+        font-size: 12px;
+        border-radius: 13px;
+    }
+
+    .student-btn span {
+        font-size: 21px;
+    }
+
+    .login-btn {
+        min-height: 65px;
+        font-size: 22px;
+        letter-spacing: 3px;
+        border-radius: 14px;
+    }
+
+    .bottom-links {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin-top: 25px;
+    }
+
+    .bottom-links a {
+        font-size: 12px;
+    }
+}
